@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+
+/* ADD TASK */
+
+.add-task {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.add-task input {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.add-task button {
+    padding: 14px 22px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.add-task button:hover {
+    background: #1d4ed8;
+}
+
+
+/* STATISTICS */
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.stats div {
+    text-align: center;
+    flex: 1;
+}
+
+.stats strong {
+    display: block;
+    font-size: 24px;
+}
+
+.stats span {
+    color: #777;
+}
+
+
+/* TASK */
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.task input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.task-title {
+    flex: 1;
+    font-size: 16px;
+}
+
+.task.completed .task-title {
+    text-decoration: line-through;
+    color: #999;
+}
+
+
+/* BUTTONS */
+
+.task button {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background: #f59e0b;
+    color: white;
+}
+
+.delete-btn {
+    background: #ef4444;
+    color: white;
+}
+
+.task button:hover {
+    opacity: 0.85;
+}
+
+
+/* EMPTY */
+
+.empty {
+    text-align: center;
+    color: #888;
+    padding: 30px;
+}
