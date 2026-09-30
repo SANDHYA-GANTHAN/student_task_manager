@@ -2,72 +2,339 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Student Task Manager</title>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard | Student Tasks</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <div class="container">
-
-        <h1>Student Task Manager</h1>
-
-        <p class="subtitle">
-            Manage your assignments and daily tasks
-        </p>
+<div class="app">
 
 
-        <!-- ADD TASK -->
+    <!-- SIDEBAR -->
 
-        <div class="add-task">
+    <aside class="sidebar">
 
-            <input
-                type="text"
-                id="taskInput"
-                placeholder="Enter a task..."
+        <div class="logo">
+
+            <div class="logo-icon">
+                ✓
+            </div>
+
+            <div class="logo-text">
+                TaskFlow
+            </div>
+
+        </div>
+
+
+        <div class="nav-label">
+            Workspace
+        </div>
+
+
+        <nav class="nav">
+
+            <a
+                href="index.html"
+                class="active"
             >
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
 
-            <button onclick="addTask()">
-                Add Task
-            </button>
+
+            <a href="tasks.html">
+
+                <span class="nav-icon">☷</span>
+
+                <span>My Tasks</span>
+
+            </a>
+
+
+            <a href="add-task.html">
+
+                <span class="nav-icon">＋</span>
+
+                <span>Add Task</span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="profile">
+
+                <div class="avatar">
+                    S
+                </div>
+
+                <div>
+
+                    <div class="profile-name">
+                        Student
+                    </div>
+
+                    <div class="profile-role">
+                        Task Manager
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
+    </aside>
 
-        <!-- TASK STATISTICS -->
 
-        <div class="stats">
+    <!-- MAIN -->
 
-            <div>
-                <strong id="totalTasks">0</strong>
-                <span>Total</span>
+    <main class="main">
+
+        <div class="page">
+
+
+            <div class="topbar">
+
+                <div>
+
+                    <h1 class="page-title">
+                        Good morning 👋
+                    </h1>
+
+                    <p class="page-subtitle">
+                        Here's what's happening with your tasks.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="add-task.html"
+                    class="primary-btn"
+                >
+                    ＋ Add Task
+                </a>
+
             </div>
 
-            <div>
-                <strong id="completedTasks">0</strong>
-                <span>Completed</span>
+
+            <!-- STATS -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>
+                            Total Tasks
+                        </span>
+
+                        <div class="stat-icon">
+                            ☷
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="totalTasks"
+                    >
+                        0
+                    </div>
+
+                    <div class="stat-label">
+                        All your tasks
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card green">
+
+                    <div class="stat-top">
+
+                        <span>
+                            Completed
+                        </span>
+
+                        <div class="stat-icon">
+                            ✓
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="completedTasks"
+                    >
+                        0
+                    </div>
+
+                    <div class="stat-label">
+                        Tasks finished
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card orange">
+
+                    <div class="stat-top">
+
+                        <span>
+                            Pending
+                        </span>
+
+                        <div class="stat-icon">
+                            ◷
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="pendingTasks"
+                    >
+                        0
+                    </div>
+
+                    <div class="stat-label">
+                        Still to do
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card red">
+
+                    <div class="stat-top">
+
+                        <span>
+                            High Priority
+                        </span>
+
+                        <div class="stat-icon">
+                            !
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="highTasks"
+                    >
+                        0
+                    </div>
+
+                    <div class="stat-label">
+                        Need attention
+                    </div>
+
+                </div>
+
             </div>
 
-            <div>
-                <strong id="pendingTasks">0</strong>
-                <span>Pending</span>
+
+            <!-- PROGRESS -->
+
+            <div class="card progress-card">
+
+                <div class="progress-heading">
+
+                    <div>
+
+                        <strong>
+                            Overall progress
+                        </strong>
+
+                        <p class="page-subtitle">
+                            Keep moving forward.
+                        </p>
+
+                    </div>
+
+                    <div
+                        class="progress-value"
+                        id="progressValue"
+                    >
+                        0%
+                    </div>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress-fill"
+                        id="progressFill"
+                    ></div>
+
+                </div>
+
             </div>
+
+
+            <!-- RECENT TASKS -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div class="card-title">
+                        Recent Tasks
+                    </div>
+
+                    <a
+                        href="tasks.html"
+                        class="page-subtitle"
+                    >
+                        View all →
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="task-list"
+                    id="recentTasks"
+                ></div>
+
+            </div>
+
 
         </div>
 
+    </main>
 
-        <!-- TASK LIST -->
-
-        <div id="taskList"></div>
-
-    </div>
+</div>
 
 
-    <script src="script.js"></script>
+<div
+    class="toast"
+    id="toast"
+></div>
+
+
+<script src="dashboard.js"></script>
 
 </body>
 
